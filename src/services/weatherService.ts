@@ -11,6 +11,6 @@ export const getWeatherData = async (city: City): Promise<WeatherData> => {
   
   if (!response.ok)
     throw new Error("Failed to fetch weather data");
-
+  
   return response.json();
 };

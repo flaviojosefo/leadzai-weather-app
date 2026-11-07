@@ -4,14 +4,14 @@ export interface WeatherCondition {
 }
 
 export interface WeatherData {
-    name: string;
-    main: {
-        temp: number;
-    };
-    weather: WeatherCondition[];
-    sys: {
-        sunrise: number;
-        sunset: number;
-    }
-    timezone: number;
+  name: string;
+  main: {
+    temp: number;
+  };
+  weather: WeatherCondition[];
+  sys: {
+    sunrise: number;
+    sunset: number;
+  }
+  timezone: number;
 }
