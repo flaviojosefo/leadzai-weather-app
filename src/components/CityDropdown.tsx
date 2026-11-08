@@ -27,9 +27,10 @@ function CityDropdown({ selectedCity, onSelectCity }: CityDropdownProps) {
     };
   }, []);
 
-  function handleSelectCity(city: City) {
-    onSelectCity(city);
+  function handleSelectCity(city: City, previousCity: City) {
     setIsOpen(false);
+    if (city != previousCity)
+      onSelectCity(city);
   }
   
   return (
@@ -53,7 +54,7 @@ function CityDropdown({ selectedCity, onSelectCity }: CityDropdownProps) {
               type='button'
               className="city-dropdown-item"
               key={`${city.name}-${city.countryCode}`}
-              onClick={() => handleSelectCity(city)}
+              onClick={() => handleSelectCity(city, selectedCity)}
             >
               {formatCity(city)}
             </button>
