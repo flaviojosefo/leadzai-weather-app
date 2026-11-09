@@ -1,5 +1,7 @@
 .app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background-color: #282c34;
 }
 
@@ -9,4 +11,8 @@
   justify-content: center;
   width: 100vw;
   margin-top: 8rem;
+}
+
+.main-content {
+  flex: 1;
 }

@@ -18,25 +18,27 @@ function App() {
   return (
     <div className="app">
       <Header />
-      {error && <p>Error: {error}</p>}
-      {weatherData && (
-        <>
-          <div className="user-inputs">
-           <CitySelector
-             selectedCity={selectedCity}
-              onSelectCity={setSelectedCity}
-           />
-            <TemperatureToggle
-              celsius={celsius}
-              onToggle={() => setCelsius(!celsius)}
-            />
-          </div>
-            <WeatherDisplay
-              weatherData={weatherData}
-              celsius={celsius}
-            />
-        </>
-      )}
+      <main className="main-content">
+        {error && <p>Error: {error}</p>}
+        {weatherData && (
+          <>
+            <div className="user-inputs">
+              <CitySelector
+                selectedCity={selectedCity}
+                onSelectCity={setSelectedCity}
+              />
+              <TemperatureToggle
+                celsius={celsius}
+                onToggle={() => setCelsius(!celsius)}
+              />
+            </div>
+              <WeatherDisplay
+                weatherData={weatherData}
+                celsius={celsius}
+              />
+          </>
+        )}
+      </main>
       <Footer />
     </div>
   );
