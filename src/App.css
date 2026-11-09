@@ -1,6 +1,12 @@
 .app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-color: #282c34;
+}
+
+.user-inputs {
+  gap: 15rem;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  margin-top: 8rem;
 }

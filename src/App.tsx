@@ -20,20 +20,22 @@ function App() {
       <Header />
       {error && <p>Error: {error}</p>}
       {weatherData && (
-        <div className="main">
-          <CitySelector
-            selectedCity={selectedCity}
+        <>
+          <div className="user-inputs">
+           <CitySelector
+             selectedCity={selectedCity}
               onSelectCity={setSelectedCity}
-          />
-          <TemperatureToggle
-            celsius={celsius}
-            onToggle={() => setCelsius(!celsius)}
-          />
-          <WeatherDisplay
-            weatherData={weatherData}
-            celsius={celsius}
-          />
-        </div>
+           />
+            <TemperatureToggle
+              celsius={celsius}
+              onToggle={() => setCelsius(!celsius)}
+            />
+          </div>
+            <WeatherDisplay
+              weatherData={weatherData}
+              celsius={celsius}
+            />
+        </>
       )}
       <Footer />
     </div>
