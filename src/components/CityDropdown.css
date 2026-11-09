@@ -1,24 +1,36 @@
 .city-dropdown {
   position: relative;
-  width: 250px;
+  width: 150px;
 }
 
 .city-dropdown-button {
   width: 100%;
-  padding: 12px;
+  padding: 12px 14px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background: #282c34;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   cursor: pointer;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s ease,
+              box-shadow 0.2s ease,
+              background 0.2s ease;
+}
+
+.city-dropdown-button:hover {
+  border-color: #D44C80;
+  box-shadow: 0 0 0 3px rgba(212, 76, 128, 0.15);
+  outline: none;
 }
 
 .city-dropdown-arrow {
-  transition: transform 0.2s ease;
+  color: #D44C80;
+  transition: transform 0.25s ease;
 }
 
 .city-dropdown-arrow.open {
@@ -27,27 +39,49 @@
 
 .city-dropdown-menu {
   position: absolute;
-  top: calc(100% + 4px);
+  top: calc(100% + 8px);
   left: 0;
   width: 100%;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  background: #282c34;
+  border: 1px solid rgba(212, 76, 128, 0.45);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
   z-index: 10;
+  animation: dropdownFade 0.18s ease;
 }
 
 .city-dropdown-item {
   width: 100%;
-  padding: 10px 12px;
+  padding: 11px 14px;
   display: flex;
   justify-content: space-between;
-  background: white;
+  align-items: center;
+  background: transparent;
+  color: #FFFFFF;
   border: none;
   cursor: pointer;
   text-align: left;
+  font-size: 14px;
+  transition: background 0.2s ease,
+              color 0.2s ease,
+              padding-left 0.2s ease;
 }
 
 .city-dropdown-item:hover {
-  background: #f2f2f2;
+  background: rgba(212, 76, 128, 0.15);
+  color: #D44C80;
+  padding-left: 18px;
+}
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
