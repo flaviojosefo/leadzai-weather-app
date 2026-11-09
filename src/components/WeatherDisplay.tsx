@@ -1,4 +1,5 @@
 import type { WeatherData } from "../types/weather";
+import { formatDescription } from "../utils/formatDescription";
 import { formatTemperature } from "../utils/formatTemperature";
 import {formatTime} from "../utils/formatTime";
 import './WeatherDisplay.css';
@@ -15,18 +16,31 @@ function WeatherDisplay({ weatherData, celsius }: WeatherDisplayProps) {
   const formattedSunset = formatTime(weatherData.sys.sunset, weatherData.timezone);
 
   const iconCode = weatherData.weather[0].icon;
-  const iconAlt = weatherData.weather[0].description;
-  const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+  const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@4x.png`;
+  
+  const description = formatDescription(weatherData.weather[0].description);
 
   return (
     <div className="weather-display">
       <div className="weather-info">
-        <p>{formattedTemp}</p>
-        <img src={iconUrl} alt={iconAlt} />
+        <img src={iconUrl} alt="icon" />
+        <p className="weather-temperature">
+          {formattedTemp} 
+          <sup>º{celsius ? 'C' : 'F'}</sup>
+        </p>
+        <p className="weather-description">
+          {description}
+        </p>
       </div>
       <div className="weather-sun">
-        <p>Sunrise: {formattedSunrise}</p>
-        <p>Sunset: {formattedSunset}</p>
+        <div className="weather-sun-item">
+          <span>Sunrise</span>
+          <p>{formattedSunrise}</p>
+        </div>
+        <div className="weather-sun-item">
+          <span>Sunset</span>
+          <p>{formattedSunset}</p>
+        </div>
       </div>
     </div>
   );

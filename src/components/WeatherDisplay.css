@@ -1,15 +1,36 @@
-.weather-display {
-  margin-top: 5rem;
-}
-
 .weather-info {
   text-align: center;
-  font-size: 8em;
-  font-weight: bold;
   color: white;
-  & p {
-    margin: auto;
-  }
+}
+
+.weather-temperature {
+  font-size: 5em;
+  font-weight: bold;
+  margin: auto;
+  margin-top: -2rem;
+}
+
+.weather-description {
+  font-size: 1em;
+  color: rgb(177, 177, 177);
+  margin-bottom: 2em;
+}
+
+.weather-info::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  width: 2%;
+  height: 2px;
+  background: #D44C80;
+}
+
+.weather-info sup {
+  font-size: 0.35em;
+  font-weight: normal;
+  vertical-align: super;
+  margin-left: 4px;
 }
 
 .weather-sun {
@@ -18,4 +39,16 @@
   justify-content: center;
   color: white;
   font-size: 1em;
+  margin-top: 4em;
+  text-align: center;
+}
+
+.weather-sun-item span {
+  color: rgb(177, 177, 177);
+}
+
+.weather-sun-item p {
+  font-size: 1.7em;
+  font-weight: bold;
+  margin: auto;
 }

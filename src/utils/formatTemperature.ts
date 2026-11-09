@@ -1,6 +1,4 @@
-export function formatTemperature (temp: number, celsius: boolean): string {
-  if (celsius)
-    return `${Math.round(temp - 273.15)} °C`;
-  else
-    return `${(Math.round((temp - 273.15) * 9/5 + 32))} °F`;
+export function formatTemperature (kelvin: number, celsius: boolean): number {
+  const temp = celsius ? kelvin - 273.15 : (kelvin - 273.15) * 9/5 + 32;
+  return Math.round(temp);
 };
