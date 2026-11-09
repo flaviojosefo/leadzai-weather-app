@@ -4,9 +4,7 @@
   align-items: center;
   padding: 0 1rem;
   min-height: 6rem;
-  color: #D44C80;
   background-color: #181b20;
-  font-size: calc(10px + 2vmin);
 }
 
 .header-left {
@@ -21,7 +19,31 @@
 
 .header-center {
   justify-self: center;
-  font-weight: bold;
+  color: white;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  position: relative;
+  text-align: center;
+  transition: color 0.25s ease;
+}
+
+.header-center::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  height: 3px;
+  border-radius: 10px;
+  background: #D44C80;
+  transition: width 0.25s ease;
+}
+
+.header-center:hover::after {
+  width: 65%;
 }
 
 .header-right {
