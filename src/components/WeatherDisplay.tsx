@@ -16,7 +16,7 @@ function WeatherDisplay({ weatherData, celsius }: WeatherDisplayProps) {
 
   const iconCode = weatherData.weather[0].icon;
   const iconAlt = weatherData.weather[0].description;
-  const iconUrl = `https://openweathermap.org/payload/api/media/file/${iconCode}@2x.png`;
+  const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
 
   return (
     <div className="weather-display">
