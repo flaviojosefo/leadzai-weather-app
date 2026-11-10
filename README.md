@@ -15,6 +15,18 @@ yarn install
 
 ## How to start
 
+### 1. API Configuration
+
+Create a `.env.local` file in the root directory of the project and add your OpenWeather API key:
+
+```env
+VITE_OPENWEATHER_API_KEY=YOUR_API_KEY
+```
+
+Replace `YOUR_API_KEY` with your actual [OpenWeather API key](https://openweathermap.org/api).
+
+### 2. Run the Development Server
+
 Start the development server:
 
 ```bash
